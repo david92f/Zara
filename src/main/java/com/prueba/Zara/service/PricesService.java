@@ -1,5 +1,8 @@
 package com.prueba.Zara.service;
 
-public class PricesService {
 
+public interface PricesService {
+
+	public String getPrices(Long id); 
+	
 }
