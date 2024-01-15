@@ -3,7 +3,6 @@ package com.prueba.Zara.endpoints;
 import java.sql.Timestamp;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,9 +16,9 @@ public class PricesController {
 	
 	@RequestMapping("/api/prices")
 //	Acepte como parámetros de entrada: fecha de aplicación, identificador de producto, identificador de cadena.
-	public String getPrices(Timestamp startDate, Long productId, Long brandId) {
+	public String getPrices(Timestamp fecha, Long productId, Long brandId) {
 		
-		return pricesService.getPrices(productId);
+		return pricesService.getPrices(fecha);
 	}
 	
 }
