@@ -5,5 +5,3 @@ Para probar el proyecto:
 - Ejecutar el terminal en la raiz de proyecto Zara
 - Ejecutar siguientes comandos:
   - mvn clean install
-  - mvn spring-boot:run
-- Entrar en la direccion: http://localhost:8080/swagger-ui/index.html#/
