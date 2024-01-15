@@ -1,6 +1,5 @@
 # Enunciado
 
-### Documentacion
 
 En la base de datos de comercio electrónico de la compañía disponemos de la tabla PRICES que refleja el precio final (pvp) y la tarifa que aplica a un producto de una cadena entre unas fechas determinadas. A continuación se muestra un ejemplo de la tabla con los campos relevantes:
  
@@ -26,7 +25,7 @@ CURR: iso de la moneda.
 
 Se pide:
 
-Construir una aplicación/servicio en SpringBoot que provea una end point rest de consulta  tal que:
+Construir una aplicación/servicio en SpringBoot que provea una end point rest de consulta tal que:
 
 Acepte como parámetros de entrada: fecha de aplicación, identificador de producto, identificador de cadena.
 Devuelva como datos de salida: identificador de producto, identificador de cadena, tarifa a aplicar, fechas de aplicación y precio final a aplicar.

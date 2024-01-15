@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PricesRepository extends JpaRepository<Prices, Integer> {
 
-    List<Prices> findByBrandIdAndProductIdAndStartDateBeforeAndEndDateAfterOrderByPriorityDesc(
-    		Long brandId, Long productId, LocalDateTime startDate, LocalDateTime endDate);
-    
+	List<Prices> findByBrandIdAndProductIdAndStartDateBeforeAndEndDateAfterOrderByPriorityDesc(Long brandId,
+			Long productId, LocalDateTime startDate, LocalDateTime endDate);
+
 }

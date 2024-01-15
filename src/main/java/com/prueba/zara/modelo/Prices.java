@@ -16,14 +16,14 @@ public class Prices {
 
 	@Id
 	private Long priceList;
-	
-    private Long brandId;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
-    
-    private Long productId;
-    private Integer priority;
-    private BigDecimal price;
-    private String curr;
+
+	private Long brandId;
+	private LocalDateTime startDate;
+	private LocalDateTime endDate;
+
+	private Long productId;
+	private Integer priority;
+	private BigDecimal price;
+	private String curr;
 
 }
