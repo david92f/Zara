@@ -15,7 +15,7 @@ public class PricesServiceImpl implements PricesService {
 	@Autowired
 	private PricesRepository pricesRepository;
 	
-//	TODO: Devuelva como datos de salida: identificador de producto, identificador de cadena, tarifa a aplicar, fechas de aplicación y precio final a aplicar.
+//	Devuelva como datos de salida: identificador de producto, identificador de cadena, tarifa a aplicar, fechas de aplicación y precio final a aplicar.
 	@Override
 	public String getPrices(Long id) {
 		Optional<Prices> optional = pricesRepository.findById(id.intValue());

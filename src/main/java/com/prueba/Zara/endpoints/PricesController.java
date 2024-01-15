@@ -15,9 +15,8 @@ public class PricesController {
 	@Autowired
 	private PricesService pricesService;
 	
-//	@GetMapping("/")
 	@RequestMapping("/api/prices")
-//	TODO: Acepte como parámetros de entrada: fecha de aplicación, identificador de producto, identificador de cadena.
+//	Acepte como parámetros de entrada: fecha de aplicación, identificador de producto, identificador de cadena.
 	public String getPrices(Timestamp startDate, Long productId, Long brandId) {
 		
 		return pricesService.getPrices(productId);

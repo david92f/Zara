@@ -1,4 +1,4 @@
-/target/*
+target/
 .project
 .classpath
 .settings/
@@ -6,4 +6,3 @@
 /.idea
 *.jar
 *.class
-/target/
