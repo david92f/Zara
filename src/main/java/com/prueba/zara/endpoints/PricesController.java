@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,7 +36,7 @@ public class PricesController {
 						+ "\nIdentificador de producto: " + value.getProductId() + "\nIdentificador de cadena: "
 						+ value.getBrandId() + "\nTarifa a aplicar: " + value.getPriceList()
 						+ "\nFechas de aplicación: " + value.getStartDate() + " / " + value.getEndDate()))
-				.orElseGet(() -> ResponseEntity.notFound().build());
+				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se ha encontrado ningun resultado"));
 	}
 
 }
