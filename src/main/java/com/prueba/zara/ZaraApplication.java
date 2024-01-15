@@ -1,4 +1,4 @@
-package com.prueba.Zara;
+package com.prueba.zara;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
