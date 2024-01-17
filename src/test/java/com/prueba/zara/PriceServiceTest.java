@@ -11,18 +11,18 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.prueba.zara.modelo.Prices;
-import com.prueba.zara.repositorio.PricesRepository;
-import com.prueba.zara.service.impl.PricesServiceImpl;
+import com.prueba.zara.modelo.Price;
+import com.prueba.zara.repositorio.PriceRepository;
+import com.prueba.zara.service.impl.PriceServiceImpl;
 
 @SpringBootTest
 class PriceServiceTest {
 
 	@Mock
-	private PricesRepository pricesRepository;
+	private PriceRepository pricesRepository;
 
 	@InjectMocks
-	private PricesServiceImpl pricesServiceImpl;
+	private PriceServiceImpl pricesServiceImpl;
 
 	@Test
 	void test1() {
@@ -30,11 +30,11 @@ class PriceServiceTest {
 		Long productId = 35455L;
 		LocalDateTime applyDate = LocalDateTime.of(2020, 6, 14, 10, 0);
 
-		Prices prices = new Prices();
-		prices.setPrice(new BigDecimal("35.50"));
+		Price price = new Price();
+		price.setPrice(new BigDecimal("35.50"));
 
 		when(pricesRepository.findByBrandIdAndProductIdAndStartDateBeforeAndEndDateAfterOrderByPriorityDesc(brandId,
-				productId, applyDate, applyDate)).thenReturn(Collections.singletonList(prices));
+				productId, applyDate, applyDate)).thenReturn(Collections.singletonList(price));
 
 		BigDecimal result = pricesServiceImpl.getPrices(brandId, productId, applyDate).get().getPrice();
 
@@ -47,11 +47,11 @@ class PriceServiceTest {
 		Long productId = 35455L;
 		LocalDateTime applyDate = LocalDateTime.of(2020, 6, 14, 16, 0);
 
-		Prices prices = new Prices();
-		prices.setPrice(new BigDecimal("25.45"));
+		Price price = new Price();
+		price.setPrice(new BigDecimal("25.45"));
 
 		when(pricesRepository.findByBrandIdAndProductIdAndStartDateBeforeAndEndDateAfterOrderByPriorityDesc(brandId,
-				productId, applyDate, applyDate)).thenReturn(Collections.singletonList(prices));
+				productId, applyDate, applyDate)).thenReturn(Collections.singletonList(price));
 
 		BigDecimal result = pricesServiceImpl.getPrices(brandId, productId, applyDate).get().getPrice();
 
@@ -64,11 +64,11 @@ class PriceServiceTest {
 		Long productId = 35455L;
 		LocalDateTime applyDate = LocalDateTime.of(2020, 6, 14, 21, 0);
 
-		Prices prices = new Prices();
-		prices.setPrice(new BigDecimal("35.50"));
+		Price price = new Price();
+		price.setPrice(new BigDecimal("35.50"));
 
 		when(pricesRepository.findByBrandIdAndProductIdAndStartDateBeforeAndEndDateAfterOrderByPriorityDesc(brandId,
-				productId, applyDate, applyDate)).thenReturn(Collections.singletonList(prices));
+				productId, applyDate, applyDate)).thenReturn(Collections.singletonList(price));
 
 		BigDecimal result = pricesServiceImpl.getPrices(brandId, productId, applyDate).get().getPrice();
 
@@ -81,11 +81,11 @@ class PriceServiceTest {
 		Long productId = 35455L;
 		LocalDateTime applyDate = LocalDateTime.of(2020, 6, 15, 10, 0);
 
-		Prices prices = new Prices();
-		prices.setPrice(new BigDecimal("30.50"));
+		Price price = new Price();
+		price.setPrice(new BigDecimal("30.50"));
 
 		when(pricesRepository.findByBrandIdAndProductIdAndStartDateBeforeAndEndDateAfterOrderByPriorityDesc(brandId,
-				productId, applyDate, applyDate)).thenReturn(Collections.singletonList(prices));
+				productId, applyDate, applyDate)).thenReturn(Collections.singletonList(price));
 
 		BigDecimal result = pricesServiceImpl.getPrices(brandId, productId, applyDate).get().getPrice();
 
@@ -98,11 +98,11 @@ class PriceServiceTest {
 		Long productId = 35455L;
 		LocalDateTime applyDate = LocalDateTime.of(2020, 6, 16, 21, 0);
 
-		Prices prices = new Prices();
-		prices.setPrice(new BigDecimal("38.95"));
+		Price price = new Price();
+		price.setPrice(new BigDecimal("38.95"));
 
 		when(pricesRepository.findByBrandIdAndProductIdAndStartDateBeforeAndEndDateAfterOrderByPriorityDesc(brandId,
-				productId, applyDate, applyDate)).thenReturn(Collections.singletonList(prices));
+				productId, applyDate, applyDate)).thenReturn(Collections.singletonList(price));
 
 		BigDecimal result = pricesServiceImpl.getPrices(brandId, productId, applyDate).get().getPrice();
 

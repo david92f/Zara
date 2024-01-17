@@ -1,15 +1,15 @@
 package com.prueba.zara.repositorio;
 
-import com.prueba.zara.modelo.Prices;
+import com.prueba.zara.modelo.Price;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PricesRepository extends JpaRepository<Prices, Integer> {
+public interface PriceRepository extends JpaRepository<Price, Integer> {
 
-	List<Prices> findByBrandIdAndProductIdAndStartDateBeforeAndEndDateAfterOrderByPriorityDesc(Long brandId,
+	List<Price> findByBrandIdAndProductIdAndStartDateBeforeAndEndDateAfterOrderByPriorityDesc(Long brandId,
 			Long productId, LocalDateTime startDate, LocalDateTime endDate);
 
 }

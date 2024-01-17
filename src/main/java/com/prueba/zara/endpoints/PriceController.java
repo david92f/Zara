@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.prueba.zara.modelo.Prices;
-import com.prueba.zara.service.PricesService;
+import com.prueba.zara.dto.PriceDTO;
+import com.prueba.zara.service.PriceService;
 
 @RestController
-public class PricesController {
-	private PricesService pricesService;
+public class PriceController {
+	private PriceService pricesService;
 
 	@Autowired
-	public PricesController(PricesService priceService) {
+	public PriceController(PriceService priceService) {
 		this.pricesService = priceService;
 	}
 
@@ -28,7 +28,7 @@ public class PricesController {
 	public ResponseEntity<String> getPrice(@PathVariable Long brandId, @PathVariable Long productId,
 			@RequestParam("applyDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime applyDate) {
 
-		Optional<Prices> price = pricesService.getPrices(brandId, productId, applyDate);
+		Optional<PriceDTO> price = pricesService.getPrices(brandId, productId, applyDate);
 
 //		Devuelva como datos de salida: identificador de producto, identificador de cadena, tarifa a aplicar, fechas de aplicación y precio final a aplicar.
 		return price

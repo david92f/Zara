@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "PRICES")
-public class Prices {
+public class Price {
 	// Atributos y anotaciones JPA para mapear los campos de la tabla
 
 	@Id
