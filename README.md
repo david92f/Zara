@@ -1,12 +1,38 @@
-Para probar el proyecto:
+# 🧪 Proyecto Zara - Prueba Técnica
 
-- Descargar el proyecto
-- Tener instalado Maven 3.2.1 o superior y Java 17 o superior
-- Ejecutar el terminal en la raiz de proyecto Zara
-- Ejecutar siguientes comandos:
-  - mvn clean install
-  - mvn spring-boot:run
-- Con el primer comando se puede ver que pasa los 5 test creados y con el segundo ejecutas la aplicación Spring Boot y pruebas el endpoint REST con Swagger en el enlace:
-  - http://localhost:8080/swagger-ui/index.html#/
+Este proyecto es una API REST desarrollada con Spring Boot, que expone un endpoint para consultar el precio de un producto en una fecha y hora concreta, según el identificador de marca y producto.
 
-- La fecha tiene que entrar con ete formato: 2020-06-14 10:00:00
+## ✅ Requisitos
+
+- Java 17 o superior
+- Maven 3.2.1 o superior
+
+## 🚀 Instrucciones para ejecutar el proyecto
+
+1. Clona o descarga el proyecto en tu equipo.
+2. Abre una terminal en la raíz del proyecto (carpeta Zara).
+3. Ejecuta los siguientes comandos:
+
+   ```bash
+   mvn clean install
+   
+   mvn spring-boot\:run
+
+El primer comando compila el proyecto y ejecuta los 5 tests unitarios exitosamente.
+
+El segundo comando inicia la aplicación Spring Boot.
+
+## 🔍 Acceso a Swagger (documentación de la API)
+Una vez ejecutada la aplicación, accede a la documentación interactiva en Swagger:
+
+### 👉 http://localhost:8080/swagger-ui/index.html#/
+
+## 🧾 Formato requerido de fecha
+
+El parámetro applyDate debe enviarse con el siguiente formato:
+
+yyyy-MM-dd HH:mm:ss
+
+### Ejemplo válido:
+
+2020-06-14 10:00:00

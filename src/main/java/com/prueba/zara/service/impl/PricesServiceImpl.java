@@ -1,32 +1,39 @@
 package com.prueba.zara.service.impl;
 
+import com.prueba.zara.dto.PriceResponseDto;
+import com.prueba.zara.modelo.Prices;
+import com.prueba.zara.repositorio.PricesRepository;
+import com.prueba.zara.service.PricesService;
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.prueba.zara.modelo.Prices;
-import com.prueba.zara.repositorio.PricesRepository;
-import com.prueba.zara.service.PricesService;
-
-@Service("PricesService")
+@Service
 public class PricesServiceImpl implements PricesService {
 
-	private final PricesRepository pricesRepository;
+    private final PricesRepository pricesRepository;
 
-	@Autowired
-	public PricesServiceImpl(PricesRepository pricesRepository) {
-		this.pricesRepository = pricesRepository;
-	}
+    public PricesServiceImpl(PricesRepository pricesRepository) {
+        this.pricesRepository = pricesRepository;
+    }
 
-	public Optional<Prices> getPrices(Long brandId, Long productId, LocalDateTime applyDate) {
-		List<Prices> prices = pricesRepository
-				.findByBrandIdAndProductIdAndStartDateBeforeAndEndDateAfterOrderByPriorityDesc(brandId, productId,
-						applyDate, applyDate);
+    @Override
+    public Optional<PriceResponseDto> getPrices(Long brandId, Long productId, LocalDateTime applyDate) {
+        List<Prices> prices = pricesRepository
+                .findByBrandIdAndProductIdAndStartDateBeforeAndEndDateAfterOrderByPriorityDesc(
+                        brandId, productId, applyDate, applyDate);
 
-		return prices.stream().findFirst();
-	}
-
+        return prices.stream()
+                .findFirst()
+                .map(p -> new PriceResponseDto(
+                        p.getProductId(),
+                        p.getBrandId(),
+                        p.getPriceList(),
+                        p.getStartDate(),
+                        p.getEndDate(),
+                        p.getPrice()
+                ));
+    }
 }
