@@ -15,8 +15,7 @@ Este proyecto es una API REST desarrollada con Spring Boot, que expone un endpoi
 
    ```bash
    mvn clean install
-   
-   mvn spring-boot\:run
+   mvn spring-boot:run
 
 El primer comando compila el proyecto y ejecuta los 5 tests unitarios exitosamente.
 

@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "PRICES")
-public class Prices {
+public class Price {
 
     @Id
     private Long priceList;
@@ -21,6 +21,6 @@ public class Prices {
     private LocalDateTime endDate;
     private Long productId;
     private Integer priority;
-    private BigDecimal price;
+    private BigDecimal productPrice;
     private String curr;
 }

@@ -1,7 +1,7 @@
 package com.prueba.zara.controller;
 
-import com.prueba.zara.dto.PriceResponseDto;
-import com.prueba.zara.service.PricesService;
+import com.prueba.zara.dto.PriceDTO;
+import com.prueba.zara.service.PriceService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,21 +10,21 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("api/prices")
-public class PricesController {
+public class PriceController {
 
-    private final PricesService pricesService;
+    private final PriceService priceService;
 
-    public PricesController(PricesService pricesService) {
-        this.pricesService = pricesService;
+    public PriceController(PriceService priceService) {
+        this.priceService = priceService;
     }
 
     @GetMapping("/{brandId}/{productId}")
-    public ResponseEntity<PriceResponseDto> getPrice(
+    public ResponseEntity<PriceDTO> getPriceDTO(
             @PathVariable Long brandId,
             @PathVariable Long productId,
             @RequestParam("applyDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime applyDate) {
 
-        return pricesService.getPrices(brandId, productId, applyDate)
+        return priceService.getPrices(brandId, productId, applyDate)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
